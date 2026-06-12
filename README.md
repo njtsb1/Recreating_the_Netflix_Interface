@@ -19,6 +19,7 @@ No server is required; the project runs locally.
 
 ## File structure
 
+```
 /netflix-project
 ├─ /img
 │ ├─ cover-Yugi.jpg
@@ -30,6 +31,7 @@ No server is required; the project runs locally.
 ├─ README.md
 ├─ style.css
 └─ script.js
+```
 
 ## Quick customizations
 
