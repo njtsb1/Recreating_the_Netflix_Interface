@@ -1,0 +1,264 @@
+/* Root variables for theme colors */
+:root{
+  --red: #E50914;
+  --bg: #141414;
+  --surface: #1f1f1f;
+  --muted: #b3b3b3;
+  --text: #ffffff;
+  --glass: rgba(255,255,255,0.04);
+  --radius: 6px;
+  --gap: 16px;
+  --container-max: 1200px;
+}
+
+/* Light theme overrides */
+:root.light{
+  --bg: #f6f6f6;
+  --surface: #ffffff;
+  --muted: #4a4a4a;
+  --text: #111111;
+  --glass: rgba(0,0,0,0.04);
+}
+
+/* Global reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  min-height:100vh;
+}
+
+/* Utility container */
+.container{
+  width:calc(100% - 32px);
+  max-width:var(--container-max);
+  margin:0 auto;
+  padding:16px;
+}
+
+/* Header */
+.site-header{
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+/* Brand */
+.brand{
+  color:var(--red);
+  font-weight:900;
+  letter-spacing:1px;
+  font-size:1.4rem;
+}
+
+/* Nav */
+.main-nav{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.main-nav .nav-link{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600;
+  font-size:0.95rem;
+}
+.main-nav .nav-link:focus,
+.main-nav .nav-link:hover{
+  color:var(--text);
+  outline:none;
+}
+
+/* Controls */
+.controls{
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.select{
+  background:var(--surface);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:8px 10px;
+  border-radius:6px;
+  font-weight:600;
+}
+.icon-btn{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:8px;
+  border-radius:8px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:var(--text);
+}
+.icon{
+  width:18px;
+  height:18px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.2;
+}
+.icon-moon{display:block}
+.icon-sun{display:none}
+
+/* When light theme is active, swap icons */
+:root.light .icon-sun{display:block}
+:root.light .icon-moon{display:none}
+
+/* Hero / main movie */
+.main-movie{
+  position:relative;
+  min-height:60vh;
+  display:flex;
+  align-items:center;
+  margin-bottom:24px;
+  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('img/cover-Yugi.jpg');
+  background-size:cover;
+  background-position:center;
+}
+.hero-overlay{
+  position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.6) 100%);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  width:70%;
+  max-width:900px;
+  padding:40px 16px;
+}
+.hero-title{
+  font-size:2.2rem;
+  margin-bottom:12px;
+  font-weight:800;
+}
+.hero-desc{
+  color:var(--muted);
+  margin-bottom:18px;
+  max-width:60ch;
+}
+
+/* Buttons */
+.btn{
+  border:0;
+  cursor:pointer;
+  padding:10px 16px;
+  border-radius:6px;
+  font-weight:700;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+}
+.btn.primary{
+  background:var(--text);
+  color:var(--bg);
+}
+.btn.ghost{
+  background:transparent;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* Carousel */
+.carousel-section{margin-top:24px}
+.section-title{
+  font-size:1.1rem;
+  margin-bottom:12px;
+  color:var(--text);
+}
+
+/* Carousel layout */
+.carousel{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  position:relative;
+}
+.carousel-track-wrap{
+  overflow:hidden;
+  flex:1;
+}
+.carousel-track{
+  display:flex;
+  gap:12px;
+  list-style:none;
+  transition:transform .35s ease;
+  will-change:transform;
+  padding:12px 0;
+}
+.carousel-item{
+  min-width:160px;
+  flex:0 0 160px;
+  border-radius:6px;
+  overflow:hidden;
+  background:var(--surface);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.carousel-item img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+  transition:transform .25s ease;
+}
+.carousel-item:focus-within img,
+.carousel-item:hover img{
+  transform:scale(1.03);
+}
+
+/* Buttons */
+.carousel-btn{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.04);
+  color:var(--text);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:1.6rem;
+}
+
+/* Footer */
+.site-footer{
+  padding:28px 16px;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* Accessibility helper */
+.sr-only{
+  position:absolute!important;
+  height:1px;width:1px;
+  overflow:hidden;clip:rect(1px,1px,1px,1px);
+  white-space:nowrap;border:0;padding:0;margin:-1px;
+}
+
+/* Responsive breakpoints */
+@media (max-width:1000px){
+  .hero-content{width:85%}
+  .carousel-item{min-width:140px;flex:0 0 140px}
+  .carousel-item img{height:190px}
+}
+@media (max-width:700px){
+  .header-inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .main-nav{display:none}
+  .hero-content{padding:20px 8px}
+  .hero-title{font-size:1.4rem}
+  .hero-desc{font-size:0.95rem}
+  .carousel-item{min-width:120px;flex:0 0 120px}
+  .carousel-item img{height:150px}
+}
