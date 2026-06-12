@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Netflix Style Demo</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Preload main background for better LCP -->
+  <link rel="preload" as="image" href="img/cover-Yugi.jpg" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="header-inner container">
+      <h1 class="brand" id="brand">NETFLIX</h1>
+
+      <nav class="main-nav" role="navigation" aria-label="Main">
+        <a href="#" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="#" class="nav-link" data-i18n="nav.series">Series</a>
+        <a href="#" class="nav-link" data-i18n="nav.movies">Movies</a>
+        <a href="#" class="nav-link" data-i18n="nav.tv">TV Shows</a>
+        <a href="#" class="nav-link" data-i18n="nav.docs">Documentaries</a>
+      </nav>
+
+      <div class="controls" role="group" aria-label="Settings">
+        <label class="sr-only" for="lang">Language</label>
+        <select id="lang" class="select" aria-label="Language selector">
+          <option value="en-US">EN</option>
+          <option value="pt-BR">PT</option>
+          <option value="es-ES">ES</option>
+        </select>
+
+        <button id="themeToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle theme">
+          <!-- Sun / Moon SVGs swapped by JS -->
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <g stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.2" y1="4.2" x2="5.6" y2="5.6"></line>
+              <line x1="18.4" y1="18.4" x2="19.8" y2="19.8"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.2" y1="19.8" x2="5.6" y2="18.4"></line>
+              <line x1="18.4" y1="5.6" x2="19.8" y2="4.2"></line>
+            </g>
+          </svg>
+
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="main" role="main">
+    <section class="hero main-movie" aria-labelledby="hero-title" aria-describedby="hero-desc">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h2 id="hero-title" class="hero-title" data-i18n="hero.title">Yu-Gi-Oh! The Film</h2>
+        <p id="hero-desc" class="hero-desc" data-i18n="hero.description">
+          Yugi Muto managed to assemble the Millennium Puzzle, he freed an ancient Pharaoh, but one thing he never knew is that, together with the Pharaoh, he freed Anubis, the Egyptian God of Death.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn primary" id="watchBtn" data-i18n="hero.watch" aria-label="Watch now">
+            ▶ <span class="btn-text">WATCH NOW</span>
+          </button>
+          <button class="btn ghost" id="infoBtn" data-i18n="hero.info" aria-label="More information">
+            ℹ <span class="btn-text">MORE INFORMATION</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="carousel-section container" aria-label="Movie carousels">
+      <h3 class="section-title" data-i18n="carousel.title">Popular on Demo</h3>
+
+      <!-- Carousel wrapper -->
+      <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="Movie thumbnails">
+        <button class="carousel-btn prev" id="prevBtn" aria-label="Previous slide">‹</button>
+
+        <div class="carousel-track-wrap">
+          <ul class="carousel-track" id="track" tabindex="0">
+            <!-- Each item -->
+            <li class="carousel-item">
+              <img src="img/mini20.jpg" alt="Yu-Gi-Oh poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini11.jpg" alt="Yu-Gi-Oh The Movie poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini12.jpg" alt="Yu-Gi-Oh Lado Negro poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini13.jpg" alt="Pokémon 2000 poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini14.jpg" alt="Mewtwo poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini15.jpg" alt="Dragon Ball GT poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini16.jpg" alt="Street Fighter poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini17.jpg" alt="Madagascar poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini18.jpg" alt="Ice Age poster" loading="lazy" />
+            </li>
+            <li class="carousel-item">
+              <img src="img/mini19.jpg" alt="The Lion King poster" loading="lazy" />
+            </li>
+          </ul>
+        </div>
+
+        <button class="carousel-btn next" id="nextBtn" aria-label="Next slide">›</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer container" role="contentinfo">
+    <p class="muted" data-i18n="footer.copy">Demo project for learning HTML CSS JS — no backend, educational use only.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
