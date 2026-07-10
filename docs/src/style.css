@@ -128,7 +128,7 @@ body{
   display:flex;
   align-items:center;
   margin-bottom:24px;
-  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('/docs/public/cover-Yugi.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url('../public/cover-Yugi.jpg');
   background-size:cover;
   background-position:center;
 }
