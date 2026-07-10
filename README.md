@@ -17,20 +17,6 @@ Learning how to rebuild the interface of the world's leading streaming site usin
 - Open `index.html` in your browser (double-click or `File → Open`).
 No server is required; the project runs locally.
 
-## File structure
-
-/netflix-project
-├─ /img
-│ ├─ cover-Yugi.jpg
-│ ├─ mini11.jpg
-│ └─ mini12.jpg ...
-├─ index.html
-├─ instructions.txt
-├─ LICENSE
-├─ README.md
-├─ style.css
-└─ script.js
-
 ## Quick customizations
 
 - **Default theme**: in `script.js` change `const savedTheme = localStorage.getItem('demo_theme') || 'dark';` to `'light'`.
@@ -51,7 +37,7 @@ No server is required; the project runs locally.
 - **JavaScript**: theme switching, multilingual support, and form behavior.
 - **AI** (Artificial Intelligence)
 
-![Screenshot](./img/netflix_demo.jpg)
+![Screenshot](./docs/public/netflix_demo.jpg)
 
 [LICENSE](./LICENSE)
 
